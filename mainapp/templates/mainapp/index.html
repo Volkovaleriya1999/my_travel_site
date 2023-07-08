@@ -1,0 +1,308 @@
+{% extends 'mainApp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Travel Club</title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+    <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+{% endblock %}
+
+{% block content %}
+
+	<div class="home">
+		
+		<!-- Home Slider -->
+		<div class="home_slider_container">
+			<div class="owl-carousel owl-theme home_slider">
+				
+				<!-- Slide -->
+				<div class="owl-item">
+					<div class="background_image" 
+						 style="background-image:url({% static 'images/home_slider.jpg' %})"><img src="{% static 'images/home_slider.jpg' %}"></div>
+					<div class="home_slider_content_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_slider_content">
+										<div class="home_title"><h2>Позвольте нам забрать вас</h2></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide -->
+				<div class="owl-item">
+					<div class="background_image"
+						 style="background-image:url({% static 'images/home_slider2.jpg' %}) "><img
+							src="{% static 'images/zakat.jpg' %}"></div>
+					<div class="home_slider_content_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_slider_content">
+										<div
+												class="home_title"><h2><a href="#" style="color: white">Влюбляйтесь в
+											новые места
+										</a></h2></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide -->
+				<div class="owl-item">
+					<div class="background_image"
+						 style="background-image:url({% static 'images/home_slider1.jpg' %})"><img
+							src="{% static 'images/para.jpg' %}"></div>
+					<div class="home_slider_content_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_slider_content">
+										<div
+												class="home_title"><h2>Создавайте историю</h2></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="home_page_nav">
+				<ul class="d-flex flex-column align-items-end justify-content-end">
+					<li><a href="#" data-scroll-to="#destinations">Направления</a></li>
+					<li><a href="#" data-scroll-to="#testimonials">Отзывы</a></li>
+					<li><a href="#" data-scroll-to="#news">События</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+		{% include 'tours/search.html' %}
+
+
+
+	<div class="intro">
+		<div class="intro_background" style="background-image:url({% static 'images/intro.png' %})"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="intro_container">
+						<div class="row">
+
+							<!-- Intro Item -->
+							<div class="col-lg-4 intro_col">
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="{% static 'images/beach.svg' %}" alt=""></div>
+									<div class="intro_content">
+										<div class="intro_title">Лучшие направления</div>
+										<div
+												class="intro_subtitle"><p>Только самые свежие и топовые предложения на
+											рынке</p></div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Intro Item -->
+							<div class="col-lg-4 intro_col">
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="{% static 'images/wallet.svg' %}" alt=""></div>
+									<div class="intro_content">
+										<div class="intro_title">Выгодные цены</div>
+										<div class="intro_subtitle"><p>Никаких дополнительных сборов</p></div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Intro Item -->
+							<div class="col-lg-4 intro_col">
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="{% static 'images/suitcase.svg' %}" alt=""></div>
+									<div class="intro_content">
+										<div class="intro_title">Превосходный сервис</div>
+										<div
+												class="intro_subtitle"><p>Проконсультируем, подберем билеты,
+											оформим страховку</p></div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>		
+			</div>
+		</div>
+	</div>
+
+	<!-- Destinations -->
+
+	<div class="destinations" id="destinations">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">просто удивительные места</div>
+					<div class="section_title"><h2>Популярные Направления</h2></div>
+				</div>
+			</div>
+			<div class="row destinations_row">
+				<div class="col">
+					<div class="destinations_container item_grid">
+
+						<!-- Destination -->
+						
+						{% for tour in tours %}
+						<div class="destination item">
+							<div class="destination_image">
+								<img src="{{ tour.hotel.city.image.url }}" alt="">
+
+<!--								<div class="spec_offer text-center"><a href="#">Специальные предложения</a></div>-->
+
+							</div>
+							<div class="destination_content">
+								<div class="destination_title"><a href="{% url 'tour' tour.slug %}">{{ tour.hotel.city }}</a></div>
+								<div class="destination_subtitle"><p>{{ tour.description|truncatewords:35 }}</p></div>
+								<div class="destination_price">От {{ tour.price }}</div>
+							</div>
+						</div>
+						{% endfor %}
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Testimonials -->
+
+	<div class="testimonials" id="testimonials">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/testimonials.jpg' %}" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">просто удивительные места</div>
+					<div class="section_title"><h2>Отзывы</h2></div>
+				</div>
+			</div>
+			<div class="row testimonials_row">
+				<div class="col">
+
+					<!-- Testimonials Slider -->
+					<div class="testimonials_slider_container">
+						<div class="owl-carousel owl-theme testimonials_slider">
+							
+							{%for com in comments%}
+							<div class="owl-item text-center">
+								<div class="testimonial">{{com.body}}</div>
+								<div class="testimonial_author">
+									<div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
+										<div>{{com.name}}</div>
+										<div>{{com.tour.name}}</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- News -->
+
+	<div class="news" id="news">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8">
+					<div class="news_container">
+
+						{% for new in news %}
+						<div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+							<div class="news_post_image"><img src="{{ new.photo.url }}" alt=""></div>
+							<div class="news_post_content">
+								<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
+									<div>{{ new.created }}</div>
+
+								</div>
+								<div
+										class="news_post_title"><a href="{% url 'new' new.slug %}">{{ new.title }}</a></div>
+								<div class="news_post_category">
+									<ul>
+										<li><a href="#">{{ new.category }}</a></li>
+									</ul>
+								</div>
+								<div class="news_post_text">
+									<p>{{ new.content|safe|slice:70 }}...</p>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+
+					</div>
+				</div>
+
+				<!-- News Sidebar -->
+				<div class="col-xl-4">
+					<div class="travello">
+						<div class="background_image" style="background-image:url({% static 'images/travello.jpg' %})"></div>
+						<div class="travello_content">
+							<div class="travello_content_inner">
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+						<div class="travello_container">
+							<a href="{% url 'destinations' %}">
+								<div class="d-flex flex-column align-items-center justify-content-end">
+									<span class="travello_title">Получите скидку 20%</span>
+									<span class="travello_subtitle">Купите тур прямо сейчас</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% block js %}
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+{% endblock %}
+
+{% endblock %}

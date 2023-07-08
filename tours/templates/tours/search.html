@@ -1,0 +1,30 @@
+	<div class="home_search">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_search_container">
+						<div class="home_search_title">♥ Найдите свое путешествие ♥</div>
+						<div class="home_search_content">
+							<form id="search" action="{% url 'destinations' %}" class="home_search_form" method="get">
+								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+									<input type="text" class="search_input search_input_2" name="search_dep_city"
+										   value="{{search_dep_city}}"
+										   placeholder="Город вылета" required="required">
+									<input type="text" class="search_input search_input_1" name="search_arrival_city"
+										   value="{{search_arrival_city}}"
+										   placeholder="Город прилета" required="required">
+									<input type="text" class="search_input search_input_3" name="search_date"
+										   value="{{search_date}}" placeholder="Дата вылета"
+										   onfocus="(this.type='date')" onblur="(this.type='text')" >
+									<input type="text" class="search_input search_input_4"  name="search_budget"
+										   value="{{search_budget}}" placeholder="Бюджет" required="required">
+									<button class="home_search_button">search</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+

@@ -1,0 +1,287 @@
+{% extends 'mainApp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>О нас</title>
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/about.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/about_responsive.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+	<div class="home">
+		<div class="background_image" style="background-image:url({% static 'images/about.jpg' %})"></div>
+		<div class="home_slider_content_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="home_slider_content">
+								<div class="home_title"><h2>О нас</h2></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	<!-- About -->
+
+	<div class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">просто удивительные места</div>
+					<div class="section_title"><h2>Несколько слов о нас</h2></div>
+				</div>
+			</div>
+			<div class="row about_row">
+				<div class="col-lg-6">
+					<div class="about_content">
+						<div class="text_highlight">Travel Club — сообщество 97 локальных туроператоров с единой службой бронирования. Все туры на сайте имеют прямые цены организаторов, входящих в сообщество, без наценок агентств. Мы работаем с 2015 года.</div>
+						<div class="about_text">
+							<p>Все наши сотрудники — это профессионалы своего дела с большим опытом в туристической
+								отрасли. Если Вы станете нашим клиентом, то, безусловно, будете окружены заботой и
+								вниманием и получите качественный сервис. Индивидуальный подход к каждому клиенту –
+								это главный приоритет в нашей работе! Мы рады предложить вам широкий спектр услуг в
+								сфере туризма по самым выгодным ценам. Все туры реализуются по ценам туроператоров
+								без каких-либо накруток и дополнительных сборов. Мы гарантируем Вам честные цены! Вы
+								всегда можете обратиться в наш офис лично, по телефонам +7 (927) 44-22-66,
+								8-967-48-37-60 либо отправить заявку или заказать обратный звонок у нас на сайте.
+								Путешествия – это наша страсть! Мы очень любим свое дело! И всегда стараемся сделать отдых наших клиентов замечательным и запоминающимся! Будем рады общению и сотрудничеству!</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="about_image"><img src="{% static 'images/about_1.jpg' %}" alt=""></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Milestones -->
+
+	<div class="milestones">
+		<div class="container">
+			<div class="row">
+				
+				<!-- Milestone -->
+				<div class="col-lg-3 milestone_col">
+					<div class="milestone text-center">
+						<div class="milestone_icon"><img src="{% static 'images/mountain.svg' %}" alt=""></div>
+						<div class="milestone_counter" data-end-value="9">0</div>
+						<div class="milestone_text">Стран</div>
+					</div>
+				</div>
+
+				<!-- Milestone -->
+				<div class="col-lg-3 milestone_col">
+					<div class="milestone text-center">
+						<div class="milestone_icon"><img src="{% static 'images/island.svg' %}" alt=""></div>
+						<div class="milestone_counter" data-end-value="98">0</div>
+						<div class="milestone_text">Направлений</div>
+					</div>
+				</div>
+
+				<!-- Milestone -->
+				<div class="col-lg-3 milestone_col">
+					<div class="milestone text-center">
+						<div class="milestone_icon"><img src="{% static 'images/camera.svg' %}" alt=""></div>
+						<div class="milestone_counter" data-end-value="5922">0</div>
+						<div class="milestone_text">Фотографий от клиентов</div>
+					</div>
+				</div>
+
+				<!-- Milestone -->
+				<div class="col-lg-3 milestone_col">
+					<div class="milestone text-center">
+						<div class="milestone_icon"><img src="{% static 'images/boat.svg' %}" alt=""></div>
+						<div class="milestone_counter" data-end-value="2334">0</div>
+						<div class="milestone_text">Довольных клиентов</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Why Choose Us -->
+
+	<div class="why">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/why.jpg' %}" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">просто удивительные места</div>
+					<div class="section_title"><h2>Почему выбирают нас?</h2></div>
+				</div>
+			</div>
+			<div class="row why_row">
+				
+				<!-- Why item -->
+				<div class="col-lg-4 why_col">
+					<div class="why_item">
+						<div class="why_image">
+							<img src="{% static 'images/why_1.jpg' %}" alt="">
+							<div class="why_icon d-flex flex-column align-items-center justify-content-center">
+								<img src="{% static 'images/why_1.svg' %}" alt="">
+							</div>
+						</div>
+						<div class="why_content text-center">
+							<div class="why_title">Быстрый сервис</div>
+							<div class="why_text">
+								<p>Проконсультирум, подберем тур, найдем билеты, оформим страховку в кратчайшие
+									сроки</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Why item -->
+				<div class="col-lg-4 why_col">
+					<div class="why_item">
+						<div class="why_image">
+							<img src="{% static 'images/why_2.jpg' %}" alt="">
+							<div class="why_icon d-flex flex-column align-items-center justify-content-center">
+								<img src="{% static 'images/why_2.svg' %}" alt="">
+							</div>
+						</div>
+						<div class="why_content text-center">
+							<div class="why_title">Отличная команда</div>
+							<div class="why_text">
+								<p>Все наши сотрудники — это профессионалы своего дела с большим опытом в туристической отрасли</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Why item -->
+				<div class="col-lg-4 why_col">
+					<div class="why_item">
+						<div class="why_image">
+							<img src="{% static 'images/why_3.jpg' %}" alt="">
+							<div class="why_icon d-flex flex-column align-items-center justify-content-center">
+								<img src="{% static 'images/why_3.svg' %}" alt="">
+							</div>
+						</div>
+						<div class="why_content text-center">
+							<div class="why_title">Лучшие сделки</div>
+							<div class="why_text">
+								<p>Вам не нужно тратить время на поиск тура и
+								просматривать десятки сайтов, сравнивая цены</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Team -->
+
+	<div class="team">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">Просто удивительные места</div>
+					<div class="section_title"><h2>Познакомьтесь с командой</h2></div>
+				</div>
+			</div>
+			<div class="row team_row">
+				
+				<!-- Team Item -->
+				<div class="col-xl-3 col-md-6 team_col">
+					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+						<div class="team_image"><img src="{% static 'images/team_1.jpg' %}" alt=""></div>
+						<div class="team_content">
+							<div class="team_title"><a href="">Маргарита Сомова</a></div>
+							<div class="team_text">
+								<p>PR - менеджер. Реклама, сотрудничество.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Team Item -->
+				<div class="col-xl-3 col-md-6 team_col">
+					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+						<div class="team_image"><img src="{% static 'images/team_2.jpg' %}" alt=""></div>
+						<div class="team_content">
+							<div class="team_title"><a href="">Георгий Антипов</a></div>
+							<div class="team_text">
+								<p>Всегда рад проконсультировать и найти для вас самое лучшее направление</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Team Item -->
+				<div class="col-xl-3 col-md-6 team_col">
+					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+						<div class="team_image"><img src="{% static 'images/team_3.jpg' %}" alt=""></div>
+						<div class="team_content">
+							<div class="team_title"><a href="">Михаил Ливанов</a></div>
+							<div class="team_text">
+								<p>Ваша культурная и развлекательная программа очень важна для него. Подберет
+									развлечения на любой вкус</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Team Item -->
+				<div class="col-xl-3 col-md-6 team_col">
+					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+						<div class="team_image"><img src="{% static 'images/team_4.jpg' %}" alt=""></div>
+						<div class="team_content">
+							<div class="team_title"><a href="">Николай Поляков</a></div>
+							<div class="team_text">
+								<p>Менеджер по продажам</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+{% block js %}
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/about.js' %}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+{% endblock %}
+
+{% endblock %}

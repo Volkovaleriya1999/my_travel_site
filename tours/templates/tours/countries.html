@@ -1,0 +1,107 @@
+{% extends 'mainApp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Страны</title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/destinations.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/destinations_responsive.css' %}">
+{% endblock %}
+
+{% block content %}
+
+	<div class="home">
+		<div class="background_image" style="background-image:url({% static 'images/destinations.jpg' %})"></div>
+	</div>
+
+	<!-- Search -->
+
+		{% include 'tours/search.html' %}
+
+
+	<!-- Destinations -->
+
+	<div class="destinations" id="destinations">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">просто удивительные места</div>
+					<div class="section_title"><h2>Страны</h2></div>
+				</div>
+			</div>
+			<div class="row destinations_row">
+				<div class="col">
+					<div class="destinations_container item_grid">
+
+					{% for count in countries %}
+						<div class="destination item">
+							<div class="destination_image">
+								<img src="{{ count.image.url }}" alt="">
+
+							</div>
+							<div class="destination_content">
+								<div class="destination_title"><a href="{% url 'country' count.slug %}">{{count.country }}</a></div>
+							</div>
+						</div>
+					{% endfor %}
+
+
+					</div>
+				</div>
+			</div>
+
+			{% if page_obj.has_other_pages %}
+				<div class="pagination">
+					<ul class="container">
+						{% if page_obj.has_previous %}
+							<li><a href="{{request.path}}?page={{ page_obj.previous_page_number }}" class="btn page-link1">&lt; Пред.</a></li>
+						{% endif %}
+
+						{% for page in paginator.page_range %}
+							{% if page == page_obj.number %}
+								<li><a href="{{request.path}}?page={{ page }}" class="btn page-link1 btn--sub">{{ page }}</a></li>
+							{% else %}
+								<li><a href="{{request.path}}?page={{ page }}" class="btn page-link1" >{{page }}</a></li>
+							{% endif %}
+						{% endfor %}
+
+						{% if page_obj.has_next %}
+							<li><a href="{{request.path}}?page={{ page_obj.next_page_number }}" class="btn page-link1" >След.&gt;</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/destinations.js' %}"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+{% load static recaptcha3 %}
+<html lang="en">
+
+<head>
+
+{% block title %}
+
+{% endblock %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Travello template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% block css %}
+
+{% endblock %}
+
+    {% recaptcha_init %}
+    {% recaptcha_ready action_name='homepage' %}
+
+</head>
+
+<body>
+<div class="super_container">
+
+    {% block menu %}
+        {% include 'mainApp/includes/inc_menu.html' %}
+    {% endblock %}
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% block footer %}
+        {% include 'mainApp/includes/inc_footer.html' %}
+    {% endblock %}
+
+</div>
+
+{% block js %}
+{% endblock %}
+
+</body>
+</html>

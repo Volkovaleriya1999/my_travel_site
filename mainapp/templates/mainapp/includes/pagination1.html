@@ -1,0 +1,22 @@
+{% if news.has_other_pages %}
+<div class="pagination">
+    <ul class="container">
+        {% if news.has_previous %}
+            <li><a href="?page={{ news.previous_page_number }}" class="btn page-link1">&lt; Пред.</a></li>
+        {% endif %}
+
+        {% for page in paginator.page_range %}
+            {% if page == news.number %}
+                <li><a href="?page={{ page }}" class="btn page-link1 btn--sub">{{ page }}</a></li>
+            {% else %}
+                <li><a href="?page={{ page }}" class="btn page-link1">{{ page }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if news.has_next %}
+            <li><a href="?page={{ news.next_page_number }}" class="btn page-link1">След. &gt;</a></li>
+        {% endif %}
+
+    </ul>
+</div>
+{% endif %}
